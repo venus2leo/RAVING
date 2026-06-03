@@ -1,0 +1,43 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+body {
+  background: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#sketch-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0;
+  width: 100%;
+}
+
+ canvas {
+  display: block;
+  width: min(calc(100vh - 100px), calc(100vw - 40px));
+  aspect-ratio: 4/3;
+}
+
+#btn-next, #btn-restart {
+  position: fixed;
+  bottom: 20px;
+  width: 90px;
+  cursor: pointer;
+  opacity: 1;
+}
+
+#btn-next {
+  right:20px;
+}
+
+#btn-restart {
+  right:70px
+}
