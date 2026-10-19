@@ -7,29 +7,28 @@ let textes = [
 let index = 0;
 let beat;
 
+
 function preload() {
-  titleFont = loadFont('../terminal-grotesque-webfont.ttf');
-  beat = loadSound('assets/spingirl.mp3',
-    () => console.log('son chargé'),
-    (err) => console.error('erreur son', err)
-  );
+  titleFont = loadFont('../terminal-grotesque-webfont.ttf'); 
+  beat = loadSound('assets/spingirl.mp3');
 }
 
-function setup() {
+  function setup() {
   let cnv = createCanvas(800, 600);
   cnv.parent('sketch-container');
   cnv.elt.style.width  = '';
   cnv.elt.style.height = '';
-  beat.setVolume(2);
-}
+  beat.setVolume(2);        
+  beat.loop();
+  }
 
 function draw() {
   background('black');
   fill('white');
-  rectMode(CENTER);
+  rectMode(CENTER)
   textFont(titleFont);
-  textAlign(CENTER, CENTER);
-  textSize(textes[index].taille);
+  textAlign(CENTER,CENTER);
+  textSize(textes[index].taille);  
 
   if (frameCount % 30 < 15) {
     text(textes[index].contenu, width/2, height/2);
@@ -37,12 +36,6 @@ function draw() {
 }
 
 function mousePressed() {
-  userStartAudio();
-  if (beat.isLoaded() && !beat.isPlaying()) {
-    beat.loop();
-  }
-  console.log(getAudioContext().state, beat.isLoaded(), beat.isPlaying());
-
   index = (index + 1) % textes.length;
   if (index === 0) {
     document.getElementById('btn-next').style.display = 'block';
