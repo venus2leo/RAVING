@@ -10,7 +10,7 @@ let beat;
 
 function preload() {
   titleFont = loadFont('../terminal-grotesque-webfont.ttf'); 
-  beat =loadSound('assets/spingirl.mp3');
+  beat = loadSound('assets/spingirl.mp3');
 }
 
   function setup() {
