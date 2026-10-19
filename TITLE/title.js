@@ -11,6 +11,7 @@ let beat;
 function preload() {
   titleFont = loadFont('../terminal-grotesque-webfont.ttf'); 
   beat = loadSound('assets/spingirl.mp3');
+  beat.loop();
 }
 
   function setup() {
@@ -20,14 +21,6 @@ function preload() {
   cnv.elt.style.height = '';
   beat.setVolume(2);        
   }
-
-function mousePressed() {
-  userStartAudio();
-  if (!beat.isPlaying()) {
-    beat.loop();
-    console.log(getAudioContext().state, beat.isLoaded());
-  }
-
 
 function draw() {
   background('black');
