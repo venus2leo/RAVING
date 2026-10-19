@@ -11,7 +11,6 @@ let beat;
 function preload() {
   titleFont = loadFont('../terminal-grotesque-webfont.ttf'); 
   beat = loadSound('assets/spingirl.mp3');
-  beat.loop();
 }
 
   function setup() {
@@ -19,7 +18,8 @@ function preload() {
   cnv.parent('sketch-container');
   cnv.elt.style.width  = '';
   cnv.elt.style.height = '';
-  beat.setVolume(2);        
+  beat.setVolume(2);   
+  beat.loop();
   }
 
 function draw() {
