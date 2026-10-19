@@ -19,8 +19,14 @@ function preload() {
   cnv.elt.style.width  = '';
   cnv.elt.style.height = '';
   beat.setVolume(2);        
-  beat.loop();
   }
+
+function mousePressed() {
+  userStartAudio();
+  if (!beat.isPlaying()) {
+    beat.loop();
+  }
+
 
 function draw() {
   background('black');
