@@ -25,6 +25,7 @@ function mousePressed() {
   userStartAudio();
   if (!beat.isPlaying()) {
     beat.loop();
+    console.log(getAudioContext().state, beat.isLoaded());
   }
 
 
